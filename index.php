@@ -63,13 +63,18 @@ $hotels = [
             <h1 class="text-center my-3">Info Hotel</h1>
             <div class="row  h-100">
 
+                <div class="col g-0">
+                    <?php foreach($hotels as $hotel) : ?>
+                    <div class="box border"><?php echo $hotel ?></div>
+                    <?php endforeach; ?>
+                </div>
+
                 <?php foreach($hotels as $hotel) : ?>
                 <div class="col g-0 h-100">
-
                     <div class="box border"><?php echo $hotel['name'] ?></div>
                     <div class="box border"><?php echo $hotel['description'] ?></div>
                     <div class="box border"><?php if($hotel['parking']) {
-                        echo $hotel['parking'];
+                        echo 'Parking available';
                     } else {
                         echo 'No parking';
                     } ?></div>
