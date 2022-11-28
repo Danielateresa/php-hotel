@@ -52,17 +52,35 @@ $hotels = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Php-hotel</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
 <body>
     <ul>
+        <div class="container">
+            <h1 class="text-center my-3">Info Hotel</h1>
+            <div class="row  h-100">
 
-        <?php foreach($hotels as $hotel) : ?>
-        <li> <?php echo $hotel['name'] . $hotel['description']. '|' . $hotel['parking'] . '|' . $hotel['vote'] . '|'
-        . $hotel['distance_to_center'] ?> </li>
-        <?php endforeach; ?>
+                <?php foreach($hotels as $hotel) : ?>
+                <div class="col g-0 h-100">
 
-    </ul>
+                    <div class="box border"><?php echo $hotel['name'] ?></div>
+                    <div class="box border"><?php echo $hotel['description'] ?></div>
+                    <div class="box border"><?php if($hotel['parking']) {
+                        echo $hotel['parking'];
+                    } else {
+                        echo 'No parking';
+                    } ?></div>
+                    <div class="box border"><?php echo $hotel['vote'] ?></div>
+                    <div class="box border"><?php echo $hotel['distance_to_center'] ?></div>
+
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
 </body>
 
 </html>
