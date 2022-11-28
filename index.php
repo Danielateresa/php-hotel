@@ -42,6 +42,8 @@ $hotels = [
     ],
 
 ];
+
+//var_dump($hotels);
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +65,13 @@ $hotels = [
             <h1 class="text-center my-3">Info Hotel</h1>
             <div class="row  h-100">
 
-                <div class="col g-0">
-                    <?php foreach($hotels as $hotel) : ?>
-                    <div class="box border"><?php echo $hotel ?></div>
-                    <?php endforeach; ?>
+                <div class="col g-0 fw-bold bg-secondary text-white">
+                    <div class="box border ps-1">Name</div>
+                    <div class="box border  ps-1">Description</div>
+                    <div class="box border  ps-1">Parking</div>
+                    <div class="box border  ps-1">Vote</div>
+                    <div class="box border  ps-1">DIstance to center</div>
+
                 </div>
 
                 <?php foreach($hotels as $hotel) : ?>
@@ -79,7 +84,7 @@ $hotels = [
                         echo 'No parking';
                     } ?></div>
                     <div class="box border"><?php echo $hotel['vote'] ?></div>
-                    <div class="box border"><?php echo $hotel['distance_to_center'] ?></div>
+                    <div class="box border"><?php echo $hotel['distance_to_center'] ?> km</div>
 
                 </div>
                 <?php endforeach; ?>
